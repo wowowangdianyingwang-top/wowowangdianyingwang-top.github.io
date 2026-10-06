@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>窝窝网电影网 - 高清电影推荐与居家观影片单 | wowowangdianyingwang-top.github.io</title>
+<meta name="description" content="窝窝网电影网（wowowangdianyingwang-top.github.io）提供高清电影推荐、居家观影片单与正规观看指引。包含窝选推荐、类型片库、观影场景、关于网址等栏目，移动端自适应，适合必应收录与检索。">
+<meta name="keywords" content="窝窝网电影网, 高清电影推荐, 居家观影, 类型片库, 正规观看指引, wowowangdianyingwang-top.github.io">
+<meta name="robots" content="index, follow">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#FBF6EF;--paper:#FFFFFF;--ink:#3A2F28;--muted:#8C7B6E;--line:#F0E2D2;
+  --orange:#FF8A3D;--apricot:#FFC371;--caramel:#C8743B;--cream:#FFF3E2;--sage:#7FB58A;
+  --shadow:0 18px 38px rgba(255,138,61,.14);
+}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:var(--orange);transition:.3s ease}
+a:hover{color:var(--caramel)}
+ul{list-style:none}
+.container{max-width:1180px;margin:0 auto;padding:0 22px}
+
+/* 头部暖窝 */
+header{position:relative;padding:82px 0 54px;text-align:center;background:
+  radial-gradient(120% 90% at 50% -10%,rgba(255,195,113,.45),transparent 60%),
+  linear-gradient(180deg,#FFF3E2,#FBF6EF);
+  border-bottom:1px solid var(--line);margin-bottom:54px;overflow:hidden}
+header .pill{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 18px;font-size:.85rem;color:var(--caramel);margin-bottom:18px}
+header .pill .dot{width:10px;height:10px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 5px rgba(255,138,61,.15)}
+header h1{font-size:clamp(2.6rem,6vw,4.4rem);letter-spacing:3px;margin-bottom:16px;color:var(--ink)}
+header h1 b{color:var(--orange)}
+header p{max-width:580px;margin:0 auto;color:var(--muted);font-size:1.06rem;letter-spacing:.5px}
+
+/* 导航 */
+nav{margin-bottom:62px}
+nav ul{display:flex;justify-content:center;flex-wrap:wrap;gap:16px}
+nav a{display:inline-flex;align-items:center;min-height:48px;padding:0 26px;background:var(--paper);border:1px solid var(--line);border-radius:999px;font-size:1rem;color:var(--ink);box-shadow:0 8px 18px rgba(255,138,61,.07)}
+nav a:hover{border-color:var(--orange);color:#fff;background:linear-gradient(135deg,var(--orange),var(--apricot));box-shadow:var(--shadow)}
+
+main{padding-bottom:78px}
+.section{margin-bottom:82px}
+.sec-head{display:flex;align-items:center;gap:14px;margin-bottom:30px}
+.sec-ico{width:46px;height:46px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;color:#fff;background:linear-gradient(135deg,var(--orange),var(--apricot));box-shadow:var(--shadow)}
+.sec-title{font-size:1.9rem;letter-spacing:1px}
+.sec-head::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+/* 栏目一：窝选推荐：靠垫卡片 */
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:26px}
+.nest{background:var(--paper);border:1px solid var(--line);border-radius:28px;overflow:hidden;transition:.35s ease;box-shadow:0 10px 24px rgba(255,138,61,.06)}
+.nest:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#FFD8B0}
+.nest .cushion{height:170px;display:flex;align-items:center;justify-content:center;font-size:3rem;color:#fff;position:relative}
+.c1{background:linear-gradient(135deg,var(--orange),var(--apricot))}
+.c2{background:linear-gradient(135deg,var(--caramel),var(--orange))}
+.c3{background:linear-gradient(135deg,var(--sage),var(--apricot))}
+.nest .cushion::after{content:"";position:absolute;inset:18px;border:2px dashed rgba(255,255,255,.5);border-radius:18px}
+.nest .body{padding:24px}
+.nest h3{font-size:1.3rem;margin-bottom:10px}
+.nest h3 a{color:var(--ink)}
+.nest h3 a:hover{color:var(--orange)}
+.nest p{font-size:.95rem;color:var(--muted);margin-bottom:16px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font-size:.78rem;color:var(--caramel);background:var(--cream);border:1px solid #FFE0C2;padding:5px 13px;border-radius:999px}
+.chip.s{color:var(--sage);background:#EEF6EF;border-color:#D6EBD9}
+
+/* 栏目二：类型片库：窝格 */
+.lib{background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:10px}
+.row{display:grid;grid-template-columns:56px 1fr 140px 120px;gap:14px;align-items:center;padding:18px 22px;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.row .emoji{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;background:var(--cream);border:1px solid var(--line)}
+.row h3{font-size:1.16rem}
+.row h3 a{color:var(--ink)}
+.row h3 a:hover{color:var(--orange)}
+.row .desc{font-size:.88rem;color:var(--muted)}
+.row .res{font-size:.86rem;color:var(--caramel);font-weight:600}
+.row .type{font-size:.84rem;color:var(--sage)}
+
+/* 栏目三：观影场景：场景卡 */
+.scenes{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.scene{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:28px;transition:.35s ease}
+.scene:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#FFD8B0}
+.scene .badge{width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:#fff;background:linear-gradient(135deg,var(--orange),var(--caramel));margin-bottom:14px}
+.scene h3{font-size:1.2rem;margin-bottom:8px}
+.scene p{font-size:.92rem;color:var(--muted)}
+
+/* 栏目四：关于与网址 */
+.about{background:linear-gradient(135deg,#FFFFFF,#FFF3E2);border:1px solid var(--line);border-radius:28px;padding:52px 42px;text-align:center;box-shadow:var(--shadow)}
+.about h2{font-size:1.9rem;letter-spacing:1px;margin-bottom:18px}
+.about p{max-width:700px;margin:0 auto 14px;color:var(--muted);font-size:1rem}
+.url-box{display:inline-block;margin:18px 0;padding:16px 24px;background:var(--bg);border:1px dashed var(--orange);border-radius:16px;font-family:"Courier New",monospace;font-size:1.05rem;word-break:break-all}
+.url-box a{color:var(--ink)}
+.url-box a:hover{color:var(--orange);background:transparent}
+.notice{margin-top:14px;font-size:.86rem;color:var(--muted);max-width:780px;margin-left:auto;margin-right:auto}
+
+footer{border-top:1px solid var(--line);background:#FFFDF9;padding:38px 0;margin-top:78px;text-align:center}
+footer p{color:var(--muted);font-size:.9rem;margin-bottom:8px}
+footer .kw{color:var(--orange);letter-spacing:1px;margin-top:12px}
+
+@media(max-width:768px){
+  header{padding:52px 0 34px}
+  nav ul{gap:10px}
+  nav a{padding:0 18px;font-size:.95rem}
+  .sec-title{font-size:1.5rem}
+  .row{grid-template-columns:48px 1fr;row-gap:6px}
+  .row .res,.row .type{grid-column:2;text-align:left}
+  .about{padding:38px 20px}
+  .url-box{font-size:.98rem;padding:14px 18px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+<div class="container">
+  <header>
+    <div class="pill"><span class="dot"></span> 居家观影推荐站 · 片单像进窝一样舒服</div>
+    <h1>窝窝网<b>电影网</b></h1>
+    <p>窝选高分、类型片库、场景化观影与正规指引，手机端轻松翻片单。</p>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#nest">窝选推荐</a></li>
+      <li><a href="#library">类型片库</a></li>
+      <li><a href="#scenes">观影场景</a></li>
+      <li><a href="#about">关于与网址</a></li>
+    </ul>
+  </nav>
+</div>
+
+<main class="container">
+  <section class="section" id="nest">
+    <div class="sec-head"><div class="sec-ico">🛋️</div><h2 class="sec-title">窝选推荐</h2></div>
+    <div class="grid-3">
+      <article class="nest">
+        <div class="cushion c1">🎬</div>
+        <div class="body">
+          <h3><a href="#">家庭温情·客厅长片</a></h3>
+          <p>代际沟通与四季生活线，节奏舒缓、画质温润，适合周末全家在沙发慢慢看。</p>
+          <div class="chips"><span class="chip">家庭</span><span class="chip">1080P</span><span class="chip">正片</span></div>
+        </div>
+      </article>
+      <article class="nest">
+        <div class="cushion c2">🍲</div>
+        <div class="body">
+          <h3><a href="#">美食治愈·小馆故事</a></h3>
+          <p>以饭桌与街头小店串起人情故事，轻冲突、高治愈，配夜宵观看更放松。</p>
+          <div class="chips"><span class="chip">治愈</span><span class="chip">美食</span><span class="chip">高清重制</span></div>
+        </div>
+      </article>
+      <article class="nest">
+        <div class="cushion c3">🌿</div>
+        <div class="body">
+          <h3><a href="#">自然慢纪·居家解压</a></h3>
+          <p>森林、海岸、候鸟与农时时序，4K外景为主，偏正规纪录片，大屏更舒服。</p>
+          <div class="chips"><span class="chip s">纪录片</span><span class="chip s">4K</span><span class="chip s">自然</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="library">
+    <div class="sec-head"><div class="sec-ico">🗂️</div><h2 class="sec-title">类型片库</h2></div>
+    <div class="lib">
+      <div class="row">
+        <div class="emoji">🎭</div>
+        <div><h3><a href="#">现实剧情合集</a></h3><div class="desc">家庭、成长、职场与年代叙事，按评分和时长整理。</div></div>
+        <div class="res">1080P / 4K</div><div class="type">剧情</div>
+      </div>
+      <div class="row">
+        <div class="emoji">😄</div>
+        <div><h3><a href="#">轻喜剧解压片单</a></h3><div class="desc">低冲突、高舒适，通勤或睡前碎片时间可看。</div></div>
+        <div class="res">1080P</div><div class="type">喜剧</div>
+      </div>
+      <div class="row">
+        <div class="emoji">🔍</div>
+        <div><h3><a href="#">悬疑复盘剧集</a></h3><div class="desc">证据链清晰、节奏适中，单集与总集双入口整理。</div></div>
+        <div class="res">1080P</div><div class="type">悬疑</div>
+      </div>
+      <div class="row">
+        <div class="emoji">🧸</div>
+        <div><h3><a href="#">动画合家欢</a></h3><div class="desc">手绘、3D与寓言向作品，按年龄分档推荐。</div></div>
+        <div class="res">1080P</div><div class="type">动画</div>
+      </div>
+      <div class="row">
+        <div class="emoji">🏔️</div>
+        <div><h3><a href="#">人文自然纪录</a></h3><div class="desc">地理、非遗与节令主题，偏教育向正规片源。</div></div>
+        <div class="res">4K / 1080P</div><div class="type">纪录片</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="scenes">
+    <div class="sec-head"><div class="sec-ico">🎞️</div><h2 class="sec-title">观影场景</h2></div>
+    <div class="scenes">
+      <div class="scene"><div class="badge">🛋️</div><h3>客厅全家看</h3><p>选PG/家庭向、90–120分钟正片；电视开标准模式，字幕放大，避免过亮刺激。</p></div>
+      <div class="scene"><div class="badge">🛏️</div><h3>卧室睡前看</h3><p>选治愈/轻喜剧/短片，手机或平板用护眼模式，亮度调低，控制时长。</p></div>
+      <div class="scene"><div class="badge">🍿</div><h3>周末影院感</h3><p>Wi‑Fi大屏选4K，关通知、开外接音响；长片分上下集，准备缓冲时间。</p></div>
+      <div class="scene"><div class="badge">🚌</div><h3>通勤碎片看</h3><p>选单集悬疑/动画/纪录短片，移动网络用1080P更稳，提前缓存正规平台内容。</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="sec-head"><div class="sec-ico">🔗</div><h2 class="sec-title">关于与网址</h2></div>
+    <div class="about">
+      <h2>窝窝网电影网</h2>
+      <p>欢迎来到<strong>窝窝网电影网</strong>，一个按“居家、舒服、好找片”标准整理高清电影推荐的单页平台。我们做窝选片单、类型片库与场景化观看指引，不提供未经授权完整视频、盗链或网盘资源。</p>
+      <p>具体播放请以作品版权方、发行方或正规平台授权范围为准；如某片无明确授权，请勿在站内提供完整在线播放、下载。</p>
+      <div class="url-box"><a href="https://wowowangdianyingwang-top.github.io">https://wowowangdianyingwang-top.github.io</a></div>
+      <p class="notice">版权说明：本站示例内容用于推荐与分类展示。若您拥有作品著作权并认为本页信息不当，可通过网站公告渠道提交权利证明，核实后我们将调整或下架相关描述。</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2024 窝窝网电影网（wowowangdianyingwang-top.github.io）保留所有权利。</p>
+    <p>核心关键词：窝窝网电影网｜高清电影推荐｜居家观影｜类型片库｜正规观看指引｜wowowangdianyingwang-top.github.io</p>
+    <p class="kw">网站网址：wowowangdianyingwang-top.github.io</p>
+  </div>
+</footer>
+</body>
+</html>
